@@ -40,3 +40,7 @@ func (h *HTTPTOOLKIT) CSPGrab(r *http.Response) *CSPData {
 	}
 	return nil
 }
+
+func isPotentialDomain(s string) bool {
+	return strings.Contains(s, ".") || strings.HasPrefix(s, "http")
+}
