@@ -42,3 +42,7 @@ func (f FilterRegex) Filter(response *Response) (bool, error) {
 }
 
 type CustomCallback func(response *Response) (bool, error)
+
+type FilterCustom struct {
+	CallBacks []CustomCallback
+}
