@@ -19,3 +19,7 @@ func (f FilterString) Filter(response *Response) (bool, error) {
 
 	return false, nil
 }
+
+type FilterRegex struct {
+	Regexs []string
+}
