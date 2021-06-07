@@ -6,3 +6,7 @@ var CSPHeaders = []string{
 	"X-Content-Security-Policy-Report-Only", // non - standard
 	"X-Webkit-Csp-Report-Only",              // non - standard
 }
+
+type CSPData struct {
+	Domains []string `json:"domains,omitempty"`
+}
