@@ -46,3 +46,14 @@ type CustomCallback func(response *Response) (bool, error)
 type FilterCustom struct {
 	CallBacks []CustomCallback
 }
+
+func (f FilterCustom) Filter(response *Response) (bool, error) {
+	for _, callback := range f.CallBacks {
+		ok, err := callback(response)
+		if ok && err == nil {
+			return true, err
+		}
+	}
+
+	return false, nil
+}
