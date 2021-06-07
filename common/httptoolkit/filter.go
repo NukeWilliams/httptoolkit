@@ -40,3 +40,5 @@ func (f FilterRegex) Filter(response *Response) (bool, error) {
 
 	return false, nil
 }
+
+type CustomCallback func(response *Response) (bool, error)
