@@ -16,6 +16,7 @@ require (
 	github.com/projectdiscovery/gologger v1.1.4
 	github.com/projectdiscovery/hmap v0.0.1
 	github.com/projectdiscovery/httputil v0.0.0-20210508183653-2e37c34b438d
+	github.com/projectdiscovery/httpx v1.0.9
 	github.com/projectdiscovery/iputil v0.0.0-20210429152401-c18a5408ca46
 	github.com/projectdiscovery/mapcidr v0.0.7
 	github.com/projectdiscovery/rawhttp v0.0.6
