@@ -1,6 +1,9 @@
 package httptoolkit
 
-import "strings"
+import (
+	"regexp"
+	"strings"
+)
 
 type Filter interface {
 	Filter(response *Response) (bool, error)
@@ -22,4 +25,18 @@ func (f FilterString) Filter(response *Response) (bool, error) {
 
 type FilterRegex struct {
 	Regexs []string
+}
+
+func (f FilterRegex) Filter(response *Response) (bool, error) {
+	for _, regex := range f.Regexs {
+		matched, err := regexp.MatchString(regex, response.Raw)
+		if err != nil {
+			return false, err
+		}
+		if matched {
+			return true, nil
+		}
+	}
+
+	return false, nil
 }
